@@ -1,37 +1,43 @@
 package com.playJs.model;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public class User {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Player {
 	
-	private int id;
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Integer id;
+	
+	@Column(nullable=false)
 	private String userName;
 	private String firstName;
 	private String lastName;
+	
+	@Column(nullable=false)
 	private String email;
+	
+	@Column(nullable=false)
 	private String password;
-	private LocalDateTime dob;
+	private LocalDate dob;
+	
+	@Column(nullable=false)
 	private LocalDateTime createdOn;
 	private LocalDateTime lastLoggedOn;
 	
-	public User() {
+	public Player() {
 		super();
 	}
-	
-	
-	
-	public User(int id, String userName, String email, String password) {
-		super();
-		this.id = id;
-		this.userName = userName;
-		this.email = email;
-		this.password = password;
-	}
 
-
-
-	public User(int id, String userName, String firstName, String lastName, String email, String password,
-			LocalDateTime dob, LocalDateTime createdOn, LocalDateTime lastLoggedOn) {
+	public Player(int id, String userName, String firstName, String lastName, String email, String password,
+			LocalDate dob, LocalDateTime createdOn, LocalDateTime lastLoggedOn) {
 		super();
 		this.id = id;
 		this.userName = userName;
@@ -79,10 +85,10 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public LocalDateTime getDob() {
+	public LocalDate getDob() {
 		return dob;
 	}
-	public void setDob(LocalDateTime dob) {
+	public void setDob(LocalDate dob) {
 		this.dob = dob;
 	}
 	public LocalDateTime getCreatedOn() {
