@@ -26,9 +26,9 @@ public class PlayJsApplication {
 			
 			System.out.println("-----------");
 			System.out.println("Variables set");
-			System.out.println(url);
-			System.out.println(uname);
-			System.out.println(pass);
+			System.out.println(System.getProperty("sql.url"));
+			System.out.println(System.getProperty("sql.username"));
+			System.out.println(System.getProperty("sql.password"));
 			System.out.println("-----------");
 			
 			env = "PROD";
