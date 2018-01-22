@@ -10,12 +10,24 @@ public class PlayJsApplication {
 		String env;
 		if (args.length > 0 && args[0].equals("PROD")) {
 			// PROD PROPS
-			System.setProperty("sql.url", System.getenv().get("SQL.HOST"));
-			System.setProperty("sql.username", System.getenv().get("SQL.UNAME"));
-			System.setProperty("sql.password", System.getenv().get("SQL.PASS"));
+			System.out.println("PROD Mode");
+			
+			String url = System.getenv().get("SQL.HOST");
+			System.out.println("URL - " + url);
+			System.setProperty("sql.url", url);
+			
+			String uname = System.getenv().get("SQL.UNAME");
+			System.out.println("UNAME - " + uname);
+			System.setProperty("sql.username", uname);
+			
+			String pass = System.getenv().get("SQL.PASS");
+			System.out.println("PASS - " + pass);
+			System.setProperty("sql.password", pass);
 			env = "PROD";
 		} else if (args.length > 0 && args[0].equals("DEV")) {
 			// DEV PROPS
+			System.out.println("DEV Mode");
+			
 			System.setProperty("sql.url", "jdbc:mysql://localhost:3306/play_js?verifyServerCertificate=false&useSSL=false&requireSSL=false");
 			System.setProperty("sql.username", "root");
 			System.setProperty("sql.password", "root");
