@@ -9,7 +9,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.playJs.config.PersistenceConfig;
 import com.playJs.config.SwaggerConfig;
 
-//@RunWith(SpringRunner.class)			To-Do FIX TEST CASES
+//@RunWith(SpringRunner.class)			To-Do FIX TEST CASES 
 //@SpringBootTest
 public class PlayJsApplicationTests {
 
