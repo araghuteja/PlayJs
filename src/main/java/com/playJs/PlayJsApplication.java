@@ -23,6 +23,14 @@ public class PlayJsApplication {
 			String pass = System.getenv().get("SQL.PASS");
 			System.out.println("PASS - " + pass);
 			System.setProperty("sql.password", pass);
+			
+			System.out.println("-----------");
+			System.out.println("Variables set");
+			System.out.println(url);
+			System.out.println(uname);
+			System.out.println(pass);
+			System.out.println("-----------");
+			
 			env = "PROD";
 		} else if (args.length > 0 && args[0].equals("DEV")) {
 			// DEV PROPS
