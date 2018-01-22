@@ -33,7 +33,9 @@ public class PlayJsController {
 
 	@RequestMapping(value="player", method= RequestMethod.POST)
 	public Player create(@RequestBody Player player){
-		player.setCreatedOn(LocalDateTime.now());
+//		player.setCreatedOn(LocalDateTime.now());
+		System.out.println("---Player---");
+		
 		return repository.saveAndFlush(player);
 	}
 

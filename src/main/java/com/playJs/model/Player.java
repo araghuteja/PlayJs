@@ -9,6 +9,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
+
 @Entity
 public class Player {
 	
@@ -18,7 +22,9 @@ public class Player {
 	
 	@Column(nullable=false)
 	private String userName;
+	
 	private String firstName;
+	
 	private String lastName;
 	
 	@Column(nullable=false)
@@ -26,10 +32,15 @@ public class Player {
 	
 	@Column(nullable=false)
 	private String password;
+	
+	@JsonSerialize(using = LocalDateSerializer.class)
 	private LocalDate dob;
 	
 	@Column(nullable=false)
+	@JsonSerialize(using = LocalDateTimeSerializer.class)
 	private LocalDateTime createdOn;
+	
+	@JsonSerialize(using = LocalDateTimeSerializer.class)
 	private LocalDateTime lastLoggedOn;
 	
 	public Player() {
